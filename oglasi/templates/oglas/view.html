@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Novi oglas{% endblock %}</h1>
+{% endblock %} {% block content %}
+<form method="post">
+    <div>{{oglas['naslov']}}</div>
+    <div>{{oglas['opis']}}</div>
+    <div>{{oglas['cena']}}</div>
+    <div>{{kategorija}}</div>
+</form>
+{% endblock %}

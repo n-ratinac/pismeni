@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block header %}
+
+<h1>{% block title%} Svi oglasi {%endblock%}</h1>
+
+ {% endblock %} 
+ {% block content %} 
+
+
+{% for oglas in oglasi %}
+<article class="post">
+    <header>
+        <div>
+            <a href={{ url_for("oglas.view", id=oglas['id']) }}><h1>{{ oglas['naslov'] }}</h1></a>
+            <a href="/"><p>Kategorija: {{ oglas['naziv']}}</p></a>
+            <p>Cena: {{ oglas['cena']}}</p>
+            
+        </div>
+    </header>
+    {% endfor %}
+</article>
+{% endblock %}
